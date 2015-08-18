@@ -23,3 +23,220 @@ body {
     background-position: center center;
     background-repeat: repeat;
 }
+
+
+section, nav, article, aside, hgroup, header, footer {
+    display: block;
+}
+
+p {
+  color: #99a1a9;
+  margin: 0 0 10px;  
+}
+
+.header {
+    margin-bottom: 0px;
+    position: relative;
+    margin-top: 38px;
+    padding: 0px 0 22px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    width: 1145px;
+}
+
+.container:before, 
+.container:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.logo {
+    float: left;
+    display: table;
+    height: 95px;
+    margin-top: 27px;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+#header-inner {
+    display: table;
+    float: left;
+    height: 95px;
+}
+
+.titlewrapper .title{
+    font-size: 37px;
+    line-height: 37px;
+    font-weight:  normal!important;
+    text-transform: capitalize;
+    font-family: 'SugarPie',"Open Sans",Tahoma,sans-serif;
+}
+
+.titlewrapper h1 {
+    padding: 15px 0;
+}
+
+
+.btn {
+    border: medium none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    border-radius: 0 !important;
+    text-shadow: none !important;
+    position: absolute;
+    text-align: center;
+    top: 85px;
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #F5F5F5;
+    background-repeat: repeat-x;
+    display: none;
+    height: 40px;
+    width: 40px;
+}
+
+.btn:hover, btn:focus {
+    color: #333;
+    background-color: #E6E6E6;
+    text-decoration: none;
+    background-position: 0px -15px;
+    transition: background-position 0.1s linear 0s;
+}
+
+.main-nav {
+    float: right;
+}
+
+.main-nav ul {
+    margin: 0;
+}
+
+.main-nav li.active {
+    background: #ff304e;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.main-nav ul li {
+    padding-left: 0 !important;
+    position: relative;
+    list-style: none;
+    float: left;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin-right: 2px;
+}
+
+.main-nav ul li a {
+    display: block;
+    background: transparent !important;
+    color: #333;
+    text-align: center;
+    line-height: 39px;
+    text-transform: capitalize;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0 9px;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 980px) {
+    .main-nav ul li {
+        width: 100%;
+        height: auto !important;
+        border-bottom: medium none;
+    }
+    .main-nav ul li a {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 2px solid #EAEAEA;
+        text-align: left;
+        color: #6A6A6A !important;
+    }   
+}
+
+@media only screen and (max-width:480px) {
+   .container {
+        width: 300px;
+   }
+   .logo {
+       float: none !important;
+       margin: 0px auto !important;
+   }
+   .btn {
+        display: block;
+        left: 3%;
+        top: 20px;
+    }
+    .nav.main-nav {
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width:768px) and (min-width: 481px) {
+    .container {
+        width: 420px;
+    }
+    .logo {
+       float: none !important;
+       margin: 0px auto !important;
+    }
+    .btn {
+        display: block;
+        left: 3%;
+        top: 20px;
+    }
+}
+
+
+@media only screen and (max-width:980px) and (min-width: 769px) {
+    .container {
+        width: 724px;
+    }
+    .logo {
+       float: none !important;
+       margin: 0px auto !important;
+    }
+    .btn {
+        display: block;
+        left: 3%;
+        top: 20px;
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    .container {
+        width: 940px;
+    }
+    .nav.main-nav {
+        display: block !important;
+    }
+}
