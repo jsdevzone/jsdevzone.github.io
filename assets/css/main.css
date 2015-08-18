@@ -61,7 +61,7 @@ p {
     float: left;
     display: table;
     height: 95px;
-    margin-top: 27px;
+    margin-top: -27px;
     margin-bottom: 0;
     margin-left: 0;
 }
@@ -177,6 +177,9 @@ p {
         text-align: left;
         color: #6A6A6A !important;
     }   
+    .nav.main-nav {
+        display: none !important;
+    }
 }
 
 @media only screen and (max-width:480px) {
