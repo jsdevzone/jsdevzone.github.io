@@ -22,3 +22,10 @@ body {
     background-position: center center;
     background-repeat: repeat;
 }
+
+.header {
+    margin-bottom: 0px;
+    position: relative;
+    margin-top: 38px;
+    padding: 0px 0 22px;
+}
