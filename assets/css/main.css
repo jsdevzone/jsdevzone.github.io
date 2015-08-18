@@ -177,7 +177,7 @@ p {
         text-align: left;
         color: #6A6A6A !important;
     }   
-    .nav.main-nav {
+    nav.main-nav {
         display: none !important;
     }
 }
@@ -235,11 +235,11 @@ p {
     }
 }
 
-@media only screen and (min-width: 981px) {
+@media only screen and (min-width: 981px) and (max-width: 1200px) {
     .container {
         width: 940px;
     }
-    .nav.main-nav {
+    nav.main-nav {
         display: block !important;
     }
 }
