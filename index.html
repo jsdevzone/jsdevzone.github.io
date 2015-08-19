@@ -20,7 +20,7 @@ comments: false
                         </div>
                         <div class="post-summary" style="border-top:8px solid {{ post.color }};">
                             {% if post.image %}
-                            <a href="#">
+                            <a href="{{ post.url }}">
                                 <img src="{{ post.image }}" style="width:850px;height:433px" />
                             </a>
                             {% endif %}
@@ -28,7 +28,7 @@ comments: false
                         <div class="post-content" style="padding:35px">
                             <h2>
                                 <span>
-                                    <a title="{{ post.title }}" href="#" style="color:#000">{{ post.title }}</a>
+                                    <a title="{{ post.title }}" href="{{ post.url }}" style="color:#000">{{ post.title }}</a>
                                 </span>
                             </h2>
                             <div class="post-meta">
@@ -39,7 +39,7 @@ comments: false
                                 {{ post.content | truncatewords: 100 }}
                             </p>
                             <p class="greytext"></p>
-                            <a style="background:{{ post.color }};" href="#" class="text-center button pink">Read More</a>
+                            <a style="background:{{ post.color }};" href="{{ post.url }}" class="text-center button pink">Read More</a>
                         </div>
                         <div style="clear:both"></div>
                         <div style="clear:both"></div>
