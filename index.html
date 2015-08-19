@@ -20,9 +20,9 @@ comments: false
                         </div>
                         <div class="post-summary" style="border-top:8px solid {{ post.color }};">
                             {% if post.image %}
-                                <a href="#">
-                                    <img src="{{ post.image }}" style="width:850px;height:433px" />
-                                </a>
+                            <a href="#">
+                                <img src="{{ post.image }}" style="width:850px;height:433px" />
+                            </a>
                             {% endif %}
                         </div>
                         <div class="post-content" style="padding:35px">
@@ -48,13 +48,67 @@ comments: false
                 <div class="post-footer">
                     <div class="post-footer-line post-footer-line-1">
                         <div class="post-share">
-                            <a class="tips" data-title="Facebook" href="http://www.facebook.com/sharer.php?u=http://simplify-themexpose.blogspot.ae/2014/07/duis-quis-erat-non-nunc-fringilla.html" target="_blank" data-original-title="" title=""><span class="share-box"><i class="fa fa-facebook"></i></span></a>
-                            <a class="tips" data-title="Twitter" href="http://twitter.com/share?url=http://simplify-themexpose.blogspot.ae/2014/07/duis-quis-erat-non-nunc-fringilla.html" target="_blank" data-original-title="" title=""><span class="share-box"><i class="fa fa-twitter"></i></span></a>
-                            <a class="tips" data-title="Linkedin" href="#" target="_blank" data-original-title="" title=""><span class="share-box"><i class="fa fa-linkedin"></i></span></a>
-                            <a class="tips" data-title="Reddit" href="http://reddit.com/submit?&amp;url=http://simplify-themexpose.blogspot.ae/2014/07/duis-quis-erat-non-nunc-fringilla.html&amp;title=Duis quis erat non nunc fringilla" rel="nofollow" data-original-title="" title=""><span class="share-box"><i class="fa fa-reddit"></i></span></a>
-                            <a class="tips" data-title="Pinterest" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" target="_blank" data-original-title="" title=""><span class="share-box"><i class="fa fa-pinterest"></i></span></a>
-                            <a class="tips" data-title="Google+" href="https://plus.google.com/share?url=http://simplify-themexpose.blogspot.ae/2014/07/duis-quis-erat-non-nunc-fringilla.html" target="_blank" data-original-title="" title=""><span class="share-box"><i class="fa fa-google-plus"></i></span></a>
-                            <a class="tips" data-title="Comments" href="http://simplify-themexpose.blogspot.ae/2014/07/duis-quis-erat-non-nunc-fringilla.html" data-original-title="" title=""><span class="share-box"><i class="fa fa-comment-o"></i></span></a>
+
+                            <a class="tips"
+                               data-title="Facebook"
+                               href="http://www.facebook.com/sharer.php?u={{ post.url }}"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-facebook"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Twitter"
+                               href="http://twitter.com/share?url={{ post.url }}"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-twitter"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Linkedin"
+                               href="#"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-linkedin"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Reddit"
+                               href="http://reddit.com/submit?&amp;url={{ post.url }}&amp;title={{ post.title }}"
+                               rel="nofollow"
+                               data-original-title="" title="">
+                                <span class="share-box"><i class="fa fa-reddit"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Pinterest"
+                               href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-pinterest"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Google+"
+                               href="https://plus.google.com/share?url={{ post.url }}"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-google-plus"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Comments"
+                               href="{{ post.url }}"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-comment-o"></i></span>
+                            </a>
                         </div>
                     </div>
                 </div>

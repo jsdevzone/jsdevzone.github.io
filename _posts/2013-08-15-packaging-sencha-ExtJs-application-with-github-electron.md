@@ -7,7 +7,7 @@ modified: 2015-08-15
 tags: [javascript, extjs, nodejs, sencha]
 disqus_shortname: "jasimea"
 disqus_identifier: "0608201501"
-image: "http://4.bp.blogspot.com/-BC7wPNB_8M8/VDbznTaHMyI/AAAAAAAACKU/3mFwF1nCU2c/s770/Untitled-6-800x500.jpg"
+image: "assets/images/190820151217.jpg"
 color: "#00C3F4"
 ---
 
