@@ -18,13 +18,13 @@ comments: false
                             {% unless forloop.last %}{% endunless %},&nbsp;
                             {% endfor %}
                         </div>
-                        {% if post.image %}
-                            <div class="post-summary" style="border-top:8px solid #00C3F4;">
+                        <div class="post-summary" style="border-top:8px solid #00C3F4;">
+                            {% if post.image %}
                                 <a href="#">
-                                    <img src="{{ page.image }}" style="width:850px;height:433px" />
+                                    <img src="{{ post.image }}" style="width:850px;height:433px" />
                                 </a>
-                            </div>
-                        {% endif %}
+                            {% endif %}
+                        </div>
                         <div class="post-content" style="padding:35px">
                             <h2>
                                 <span>
