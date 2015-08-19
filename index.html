@@ -8,6 +8,8 @@ comments: false
 
 
 <!-- blog posts -->
+
+{% for post in paginator.posts %}
 							<div class="date-outer">
 								<div class="date-posts">
 									<div class="post-outer">
@@ -16,7 +18,8 @@ comments: false
 												<div id="summary">
 													<div class="category-links" style="background:#00C3F4;">
 														{% for tag in page.tags %}
-															<a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>,&nbsp;
+															<a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>
+															{% unless forloop.last %}{% endunless %},&nbsp;{% endfor %}
 														{% endfor %}
 													</div>
 													<div class="post-summary" style="border-top:8px solid #00C3F4;">
@@ -67,3 +70,4 @@ comments: false
 									</div>
 								</div>
 							</div>
+{% endfor %}
