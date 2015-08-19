@@ -13,12 +13,12 @@ comments: false
                 <div class="post-body entry-content">
                     <div id="summary">
                         <div class="category-links" style="background:#00C3F4;">
-                            {% for tag in page.tags %}
+                            {% for tag in post.tags %}
                             <a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>
                             {% unless forloop.last %}{% endunless %},&nbsp;
                             {% endfor %}
                         </div>
-                        {% if page.image %}
+                        {% if post.image %}
                             <div class="post-summary" style="border-top:8px solid #00C3F4;">
                                 <a href="#">
                                     <img src="{{ page.image }}" style="width:850px;height:433px" />
