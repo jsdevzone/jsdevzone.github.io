@@ -10,7 +10,10 @@ comments: false
 <!-- blog posts -->
 
 {% for post in paginator.posts %}
-							<div class="date-outer">
+	<div>One</div>
+{% endfor %}
+
+<div class="date-outer">
 								<div class="date-posts">
 									<div class="post-outer">
 										<div class="post hentry">
@@ -22,7 +25,7 @@ comments: false
 															{% unless forloop.last %}{% endunless %},&nbsp;{% endfor %}
 														{% endfor %}
 													</div>
-													<!--<div class="post-summary" style="border-top:8px solid #00C3F4;">
+													<div class="post-summary" style="border-top:8px solid #00C3F4;">
 														<a href="#">
 															<img 
 																src="http://4.bp.blogspot.com/-BC7wPNB_8M8/VDbznTaHMyI/AAAAAAAACKU/3mFwF1nCU2c/s770/Untitled-6-800x500.jpg" 
@@ -48,7 +51,7 @@ comments: false
 														</p>
 														<p class="greytext"></p>
 														<a style="background:#00C3F4;" href="#" class="text-center button pink">Read More</a>
-													</div>-->
+													</div>
 													<div style="clear:both"></div>
 													<div style="clear:both"></div>
 												</div>
@@ -70,4 +73,3 @@ comments: false
 									</div>
 								</div>
 							</div>
-{% endfor %}
