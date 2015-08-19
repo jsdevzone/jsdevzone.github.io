@@ -2,7 +2,7 @@
 layout: post-index
 title: Better javascript workflow with jake js
 description: "Describe this nonsense."
-tags: [Jekyll, theme, themes, responsive, blog, modern]
+tags: [JavaScript, Jake Js, Build, NodeJs]
 comments: false
 ---
 
@@ -15,8 +15,9 @@ comments: false
 											<div class="post-body entry-content">
 												<div id="summary">
 													<div class="category-links" style="background:#00C3F4;">
-														<a href="#">Slider</a>,&nbsp;
-														<a href="#">Technology</a>
+														{% for tag in page.tags %}
+															<a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>,&nbsp;
+														{% endfor %}
 													</div>
 													<div class="post-summary" style="border-top:8px solid #00C3F4;">
 														<a href="#">
