@@ -5,3 +5,7 @@ description: "Describe this nonsense."
 tags: [JavaScript, Jake Js, Build, NodeJs]
 comments: false
 ---
+{% for tag in page.tags %}
+	<a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>
+	{% unless forloop.last %}{% endunless %},&nbsp;{% endfor %}
+{% endfor %}
