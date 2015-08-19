@@ -18,13 +18,13 @@ comments: false
                             {% unless forloop.last %}{% endunless %},&nbsp;
                             {% endfor %}
                         </div>
-                        <div class="post-summary" style="border-top:8px solid #00C3F4;">
-                            <a href="#">
-                                <img
-                                    src="http://4.bp.blogspot.com/-BC7wPNB_8M8/VDbznTaHMyI/AAAAAAAACKU/3mFwF1nCU2c/s770/Untitled-6-800x500.jpg" 
-                                    style="width:850px;height:433px"/>
-                            </a>
-                        </div>
+                        {% if post.image %}
+                            <div class="post-summary" style="border-top:8px solid #00C3F4;">
+                                <a href="#">
+                                    <img src="{{ post.image }}" style="width:850px;height:433px" />
+                                </a>
+                            </div>
+                        {% endif %}
                         <div class="post-content" style="padding: 0 35px">
                             <h2>
                                 <span>
@@ -32,7 +32,7 @@ comments: false
                                 </span>
                             </h2>
                             <div class="post-meta">
-                                <span> Posted On : <span> {{ post.date | date_to_xmlschema }} </span></span>
+                                <span> Posted On : <span> {{ post.date | date: "%B %d, %Y" }} </span></span>
                                 <span style="color:#00C3F4;"> 0 Comments</span>
                             </div>
                             <p>
