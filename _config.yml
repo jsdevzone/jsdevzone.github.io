@@ -1,0 +1,8 @@
+title:            Jsdevzone
+description:      Describe your website here.
+disqus_shortname: jasimea
+reading_time:     true
+words_per_minute: 200
+
+# Amount of post to show on home page
+paginate: 5
