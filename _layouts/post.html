@@ -1,0 +1,71 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+	{% include head.html %}
+</head>
+
+<body>
+
+	<div class="header">
+		<div class="container">
+			<header role="banner">
+				
+				<!-- Logo -->
+				
+				<div class="logo">
+					<div class="header-o section" id="header">
+						<div class="widget Header" id="Header1">
+							<div id="header-inner">
+								<div class="titlewrapper">
+									<h1 class="title">JSDevZone</h1>
+								</div>
+								<div class="descriptionwrapper">
+									<p class="description"><span></span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Navigation Button -->
+				<button class="btn btn-navbar hidden-desktop collapsed" data-target=".nav-collapse" data-toggle="collapse" type="button">
+					<span class="icon-bar menu-toggle fa fa-bars"></span>
+				</button>
+				
+				<!-- Main Navigation -->
+				<nav class="main-nav nav-collapse in collapse" style="display:none; height: auto;">
+					<div class="menu-menu-1-container">
+						<ul class="menu" id="menu-menu-1">
+							<li class="active"><a href="http://simplify-themexpose.blogspot.ae/">Home</a></li>
+							<li><a href="#">Archive</a></li>
+							<li><a href="#">About Me</a></li>
+						</ul>
+					</div>
+				</nav>
+				
+			</header>
+		</div>
+	</div>     
+	
+	<!-- Main Content -->
+	<div class="container main-content">
+		<div class="row">
+			<div class="span8">
+				<div class="main section">
+					<div class="widget blog">
+						<div class="blog-posts hfeed">
+							{% include post.html %}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% include sidebar.html %}
+		</div>
+	</div>
+	
+
+</body>
+</html>
