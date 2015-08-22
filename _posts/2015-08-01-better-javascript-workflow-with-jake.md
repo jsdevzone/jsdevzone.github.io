@@ -10,7 +10,6 @@ disqus_shortname: "jasimea"
 disqus_identifier: "0608201501"
 ---
 
-### Introduction
 
 Jake is a javascript build tool that can dramatically improve your javascript development workflow. It helps you to easily maintain and automate the development 
 tasks such as compiling sass files, typescript, coffeescript, etc, concatenate and minify source code, optimising images and validating your javascript code with JSHint.
