@@ -8,6 +8,7 @@ modified: 2015-07-24
 tags: [javascript, jake, nodejs, build automation]
 disqus_shortname: "jasimea"
 disqus_identifier: "0608201501"
+color: "#45b0e3"
 ---
 
 

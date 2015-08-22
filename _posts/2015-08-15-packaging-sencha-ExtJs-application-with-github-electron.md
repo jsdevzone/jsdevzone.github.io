@@ -7,6 +7,7 @@ modified: 2015-08-15
 tags: [javascript, extjs, nodejs, sencha]
 disqus_shortname: "jasimea"
 disqus_identifier: "0608201501"
+color: "#F76700"
 ---
 
 Sencha ExtJs provides developers the potential to develop universal applications using HTML, CSS and JavaScript. Starting from version 6.0, ExtJs apps are not only limited to desktop but are also accessible on mobile and tablets as well.   But what if you want to run your application as a native application like Phonegap?.  Sencha provides a way to package your application into native mobile application using Sencha Command. They were also providing chromium based desktop packager before, but now this project seems to be discontinued.  So what if you want to package your application into native desktop application?. There are lot of options or tools are available for this, like Github Electron, NwJs, Tide Sdk, etc. 
