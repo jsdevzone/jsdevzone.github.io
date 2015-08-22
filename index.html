@@ -1,6 +1,6 @@
 ---
 layout: post-index
-title: Better javascript workflow with jake js
+title: JsDevZone - It's all about javascript
 description: "Describe this nonsense."
 tags: [JavaScript, Jake Js, Build, NodeJs]
 comments: false
@@ -12,12 +12,10 @@ comments: false
             <div class="post hentry">
                 <div class="post-body entry-content">
                     <div id="summary">
+                        
                         <div class="category-links" style="background:{{ post.color }};">
-                            {% for tag in post.tags %}
-                            <a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>
-                            {% unless forloop.last %}{% endunless %},&nbsp;
-                            {% endfor %}
                         </div>
+                        
                         <div class="post-summary" style="border-top:8px solid {{ post.color }};">
                             {% if post.image %}
                             <a href="{{ post.url }}">
@@ -25,6 +23,7 @@ comments: false
                             </a>
                             {% endif %}
                         </div>
+
                         <div class="post-content" style="padding:35px">
                             <h2>
                                 <span>
