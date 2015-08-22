@@ -57,7 +57,122 @@
 				<div class="main section">
 					<div class="widget blog">
 						<div class="blog-posts hfeed">
-							{{ content }}
+							<div class="date-outer">
+    <div class="date-posts">
+        <div class="post-outer">
+            <div class="post hentry">
+                <div class="post-body entry-content">
+                    <div id="summary">
+                        
+                        <div  class="category-links" style="display: none;background:{{ color }};">
+                            {% for tag in post.tags %}
+                            <a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a>
+                            {% unless forloop.last %}{% endunless %},&nbsp;
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="post-summary" style="border-top:8px solid {{ color }};">
+                            {% if image %}
+                            <a href="{{ url }}">
+                                <img src="{{ image }}" style="width:850px;height:433px" />
+                            </a>
+                            {% endif %}
+                        </div>
+
+                        <div class="post-content" style="padding:35px">
+                            <h2>
+                                <span>
+                                    <a title="{{ post.title }}" href="{{ post.url }}" style="color:#000">{{ title }}</a>
+                                </span>
+                            </h2>
+                            <div class="post-meta">
+                                <span> Posted On : <span> {{ post.date | date: "%B %d, %Y" }} </span></span>
+                                <span style="color:#00C3F4;"> 0 Comments</span>
+                            </div>
+                            <p>
+                                {{ content }}
+                            </p>
+                            <p class="greytext"></p>
+                            <a style="background:{{ post.color }};" href="{{ url }}" class="text-center button pink">Read More</a>
+                        </div>
+                        <div style="clear:both"></div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+                <div class="post-footer">
+                    <div class="post-footer-line post-footer-line-1">
+                        <div class="post-share">
+
+                            <a class="tips"
+                               data-title="Facebook"
+                               href="http://www.facebook.com/sharer.php?u={{ post.url }}"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-facebook"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Twitter"
+                               href="http://twitter.com/share?url={{ post.url }}"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-twitter"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Linkedin"
+                               href="#"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-linkedin"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Reddit"
+                               href="http://reddit.com/submit?&amp;url={{ post.url }}&amp;title={{ post.title }}"
+                               rel="nofollow"
+                               data-original-title="" title="">
+                                <span class="share-box"><i class="fa fa-reddit"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Pinterest"
+                               href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-pinterest"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Google+"
+                               href="https://plus.google.com/share?url={{ post.url }}"
+                               target="_blank"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-google-plus"></i></span>
+                            </a>
+
+                            <a class="tips"
+                               data-title="Comments"
+                               href="{{ post.url }}"
+                               data-original-title=""
+                               title="">
+                                <span class="share-box"><i class="fa fa-comment-o"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 						</div>
 					</div>
 				</div>
