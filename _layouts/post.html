@@ -82,11 +82,11 @@
 							                        <div class="post-content" style="padding:35px">
 							                            <h2>
 							                                <span>
-							                                    <a title="{{ title }}" href="{{ post.url }}" style="color:#000">{{ title }}</a>
+							                                    <a title="{{ title }}" href="{{ post.url }}" style="color:#000">{{ page.title }}</a>
 							                                </span>
 							                            </h2>
 							                            <div class="post-meta">
-							                                <span> Posted On : <span> {{ date | date: "%B %d, %Y" }} </span></span>
+							                                <span> Posted On : <span> {{ page.date | date: "%B %d, %Y" }} </span></span>
 							                                <span style="color:#00C3F4;"> 0 Comments</span>
 							                            </div>
 							                            <p>
