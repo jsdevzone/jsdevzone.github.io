@@ -76,11 +76,11 @@ Them format of  ```package.json``` is exactly the same as that of Node's modules
 
 ```Electron/app/package.json``` might look like this:
 {% highlight javascript %}
-	{
-		name: "app-name",
-		version: "0.0.0",
-		main: "main.js"
-	}
+{
+    name: "app-name",
+    version: "0.0.0",
+    main: "main.js"
+}
 {% endhighlight %}
 
 You can create both  package.json files either by entering ```npm init``` command or manually.

@@ -1,4 +1,8 @@
 
+p, pre, pre.prettyprint, blockquote {
+    margin: 0 0 1.1em;
+}
+
 blockquote {
     border-left-width: 10px;
     background-color: rgba(128,128,128,0.05);
@@ -9,19 +13,17 @@ blockquote {
 }
 
 code {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #3f3f3f;
-    background-color: rgba(128,128,128,0.075);
-    white-space: nowrap;
-    border-radius: 4px;
+
 }
 
 pre {
-    font-size: 12px;
-    font-size: 0.75rem;
+    font-size: 14px;
     line-height: 1.5;
     overflow-x: auto;
+}
+
+pre code {
+
 }
 
 tt, code, kbd, samp, pre {
