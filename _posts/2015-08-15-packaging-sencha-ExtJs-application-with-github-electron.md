@@ -476,9 +476,9 @@ module.exports = function () {
     return init()
     .then(copyRuntime)
     .then(cleanupRuntime)
-    .then(packageBuiltApp)
-    .then(finalize)
-    .then(renameApp)
+    .then(createAsar)
+    .then(updateResources)
+    .then(rename)
     .then(createInstaller);
 };
 {% endhighlight %}
@@ -490,12 +490,20 @@ It will be big frustration if we are switching back and forth from sencha comman
 Sencha command provides lot of extension points where you can  hook your custom ant tasks. Here our task is to copy the current build into workspace/electron/app directory and execute our build.js file.  Paste the code below into to the ``build.xml``` file in your application root.
 
 {% highlight xml %}
-	 <target name="-after-build">
-		 <delete/>
-        <copy todir="${workspace.build.dir}/Electron/resources">
+	 <target name="-after-build">  
+        <delete includeemptydirs="true">
+             <fileset dir="Electron/app">
+                 <exclude name="package.json" />
+                 <exclude name="main.js" />
+                 <include name="**/*" />
+             </fileset>
+        </delete>
+        <copy todir="Electron/app">
             <fileset dir="${build.dir}" />
         </copy>
-        <exec  />
+        <exec dir="${app.dir}/Electron" executable="node">
+            <arg value="build.js"/>
+        </exec>
     </target>
 {% endhighlight %}
 
