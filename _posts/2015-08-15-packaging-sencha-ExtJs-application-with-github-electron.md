@@ -54,12 +54,12 @@ ExtJs Application
 |-- modern
 |-- ...
 |--Electron
-	|-- build
-	|-- app
-		|-- main.js
-		|-- package.json
-	|-- package.json
-	|-- node_modules
+    |-- build
+    |-- app
+        |-- main.js
+        |-- package.json
+    |-- package.json
+    |-- node_modules
 |-- build.xml
 {% endhighlight %}
 
@@ -75,26 +75,27 @@ Create the above folder structure inside your ExtJs application.
 Them format of  ```package.json``` is exactly the same as that of Node's modules.  Your application's startup script should be specified in ```main``` property inside your application ```package.son```.
 
 ```Electron/app/package.json``` might look like this:
-```
+{% highlight javascript %}
 	{
 		name: "app-name",
 		version: "0.0.0",
 		main: "main.js"
 	}
-```
+{% endhighlight %}
 
 You can create both  package.json files either by entering ```npm init``` command or manually.
 
 Then install npm dependencies  need for packaging application by entering following command in your command line prompt:
 
-```
+{% highlight javascript %}
 	npm install --save-dev electron-prebuilt fs-jetpack asar recedit Q
-```
+{% endhighlight %}
 
 > Note:  You should change your current working directory to ```Electron ``` folder in your command line prompt
 
 ``` Electron/app/main.js``` is the entry point of our electron application. This script is resposible for creating the  main window and handling the system events.  Copy the code below to ```main.js```:
-```
+
+{% highlight javascript %}
 // Module to control application life.
 var app = require('app'); 
 
@@ -131,12 +132,12 @@ app.on('ready', function() {
     mainWindow = null;
   });
 });
-```
+{% endhighlight %}
 This script creates a chromium window and loads our ExtJs application's index.html into the Web view.  
 
 As I mentioned above, Github Electron supports the native  nom modules inside the web pages. So if you want to access the native nom modules you can do it in your client script files of html pages as shown below:
 
-```
+{% highlight javascript %}
 	var fs = require('fs');
 	
 	//reads the file content
@@ -144,7 +145,7 @@ As I mentioned above, Github Electron supports the native  nom modules inside th
 	
 	// Note that, DOM can directly communicate with native node modules.
 	document.getElementById('id').innerHTML = file;
-```
+{% endhighlight %}
 
 ###Creating your electron build script
 
@@ -160,7 +161,7 @@ We use node.js script for building the application. A typical electron distribut
 
 
 Let's start writing our build.js file. Import all required modules as follows:
-```
+{% highlight javascript %}
 'use strict';
 
 var Q = require('q');
@@ -168,9 +169,9 @@ var childProcess = require('child_process');
 var jetpack = require('fs-jetpack');
 var asar = require('asar');
 
-```
+{% endhighlight %}
 Initialise the script:
-```
+{% highlight javascript %}
 	var projectDir;
 	var buildDir;
 	var manifest;
@@ -183,29 +184,29 @@ Initialise the script:
 		manifest = appDir.read('./package.json', 'json');
 		return Q();
 	}
-```
+{% endhighlight %}
 The ```init``` method assign directories to corresponding global variables. Here we use ```fs-jetpack``` node module for file operations as node's  ```fs``` modules too low level. 
 
 #### Copy Electron distribution
 
 Copy the ```electron-prebuilt``` from your development node dependencies to the build directory:
-```
+{% highlight javascript %}
 function copyElectron() {
 	return projectDir.copyAsync('node_modules/electron-prebuilt/dist', buildDir, { empty: true});
 }
-```
+{% endhighlight %}
 #### Cleanup default application
 As I mentioned before Electron shipped with default application. 
 It can be found in ```default_app``` inside  resources folder.  Remove files like:
-```
+{% highlight javascript %}
 function cleanupRuntime () {
     return buildDir.removeAsync('resources/default_app');
 }
-```
+{% endhighlight %}
 
 ####Create asar package as  follows:
 Create asar package of your extjs application as follows:
-```
+{% highlight javascript %}
 function createAsar() {
 	  var deferred = Q.defer();
     asar.createPackage(appDir, buildDir.path('resources/app.asar'), function() {
@@ -213,9 +214,9 @@ function createAsar() {
     });
     return deferred.promise;
 }
-```
+{% endhighlight %}
 Replace the default electron icon with your own and rename the application.  Copy your icons into ```Electron/resources``` folder.
-```
+{% highlight javascript %}
 function updateResources() {
 	var deferred = Q.defer();
 
@@ -242,7 +243,7 @@ function updateResources() {
 function rename() {
     return buildDir.renameAsync('electron.exe', manifest.productName + '.exe');
 }
-```
+{% endhighlight %}
 ###Create installer
 
 
