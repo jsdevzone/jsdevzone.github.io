@@ -252,8 +252,7 @@ You can either use wix or NSIS to create windows installer. Here we use NSIS whi
 1. [Download](http://nsis.sourceforge.net/Download)  and install NSIS.
 2. Create ```Electron/resources/installer.nsis``` , NSIS script as follows:
 
-
-```
+{% highlight nsis %}
 ; NSIS packaging/install script
 ; Docs: http://nsis.sourceforge.net/Docs/Contents.html
 
@@ -414,9 +413,11 @@ Section "Uninstall"
     ${EndIf}
 
 SectionEnd
-```
+{% endhighlight %}
+
 Next we need to define a node function to process this script and execute create installer. So define the ```createInstaller``` function in your build.js like following:
-```
+
+{% highlight javascript %}
 function createInstaller() {
     var deferred = Q.defer();
 
@@ -464,13 +465,13 @@ function createInstaller() {
     return deferred.promise;
 };
 
-```
+{% endhighlight %}
 ```createInstaller``` method first replaces the nsis script with project specific values for name and icon. Then it executes the script with ```makensis``` command. Note that you should have NSIS installed on your system and also it should be available in your path.
 
 ###Combine all together
 
 Combine all the tasks together and export  the module:
-```
+{% highlight javascript %}
 module.exports = function () {
     return init()
     .then(copyRuntime)
@@ -480,7 +481,7 @@ module.exports = function () {
     .then(renameApp)
     .then(createInstaller);
 };
-```
+{% endhighlight %}
 
 ### Automating the process with sencha command.
 
@@ -488,7 +489,7 @@ It will be big frustration if we are switching back and forth from sencha comman
 
 Sencha command provides lot of extension points where you can  hook your custom ant tasks. Here our task is to copy the current build into workspace/electron/app directory and execute our build.js file.  Paste the code below into to the ``build.xml``` file in your application root.
 
-```
+{% highlight xml %}
 	 <target name="-after-build">
 		 <delete/>
         <copy todir="${workspace.build.dir}/Electron/resources">
@@ -496,14 +497,14 @@ Sencha command provides lot of extension points where you can  hook your custom 
         </copy>
         <exec  />
     </target>
-```
+{% endhighlight %}
 
 You may want to change the target to ```-after-watch``` , if you want to integrate sencha watch command with electron build. 
 
 Build your application:
-```
+{% highlight javascript %}
 sencha app build production
-```
+{% endhighlight %}
 
 You can find the native desktop version of your application in ```Electron``` folder.
 
