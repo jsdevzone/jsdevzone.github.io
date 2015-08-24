@@ -59,9 +59,9 @@ ExtJs Application
         |-- main.js
         |-- package.json
     |-- resources
-	    |-- installer.nsi
-	    |-- icon.ico
-	    |-- setup-banner.bmp
+        |-- installer.nsi
+        |-- icon.ico
+        |-- setup-banner.bmp
     |-- package.json
     |-- node_modules
 |-- build.xml
