@@ -58,6 +58,10 @@ ExtJs Application
     |-- app
         |-- main.js
         |-- package.json
+    |-- resources
+	    |-- installer.nsi
+	    |-- icon.ico
+	    |-- setup-banner.bmp
     |-- package.json
     |-- node_modules
 |-- build.xml
@@ -79,7 +83,9 @@ Them format of  ```package.json``` is exactly the same as that of Node's modules
 {
     name: "app-name",
     version: "0.0.0",
-    main: "main.js"
+    main: "main.js",
+    productName: "app-name",
+    description: "your product description goes here..."
 }
 {% endhighlight %}
 
@@ -135,7 +141,7 @@ app.on('ready', function() {
 {% endhighlight %}
 This script creates a chromium window and loads our ExtJs application's index.html into the Web view.  
 
-As I mentioned above, Github Electron supports the native  nom modules inside the web pages. So if you want to access the native nom modules you can do it in your client script files of html pages as shown below:
+As I mentioned above, Github Electron supports the native  npm modules inside the web pages. So if you want to access the native npm modules you can do it in your client script files of html pages as shown below:
 
 {% highlight javascript %}
 	var fs = require('fs');
@@ -485,9 +491,12 @@ module.exports = function () {
 
 ### Automating the process with sencha command.
 
-It will be big frustration if we are switching back and forth from sencha command to node js command line each time when we build the application. So we need to integrate this nodejs build in to the sencha command. Whenever you build your application with sencha command, the build.js should be executed.
+It's a big frustration switching back and forth from sencha command to node js command line each time when we build the application. So we need to integrate this nodejs build in to the sencha command. The current build artifacts should be copied into ```Electron``` directory and ``build.js ``` should be executed whenever you build your extjs application.
 
-Sencha command provides lot of extension points where you can  hook your custom ant tasks. Here our task is to copy the current build into workspace/electron/app directory and execute our build.js file.  Paste the code below into to the ``build.xml``` file in your application root.
+
+Whenever you build your application with sencha command, thhe the build.js should be executed.
+
+Sencha command provides lot of extension points where you can  hook your custom ant tasks. Here our task is to copy the current build into workspace/electron/app directory and execute our build.js file.  Paste the code below into to the ```build.xml``` file in your application root.
 
 {% highlight xml %}
 	 <target name="-after-build">  
@@ -516,7 +525,5 @@ sencha app build production
 
 You can find the native desktop version of your application in ```Electron``` folder.
 
-###Summary
-There are other options other than electron for native packaging like NWJS and TideSdk. Advantage of electron comparing with others is it gives you the ability to access the local npm modules directly from your html pages. And Sencha ExtJs combined with Electron is a great replacement for traditional desktop applications.
 
 Complete code for this blog post is hosted into [Github](http://github.com/jasimea/).
